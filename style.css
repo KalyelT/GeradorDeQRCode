@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+#qr-code {
+    border: 2px solid #000;
+    padding: 20px;
+    display: inline-block;
+}
+#text-input {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#gerar-qr {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#qr-resultado {
+    margin-top: 20px;
+}
+#qr-resultado img {
+    width: 200px;
+    height: 200px;
+}
+#qr-resultado p {
+    font-size: 14px;
+    color: #555;
+}
+#qr-resultado p.error {
+    color: red;
+}
+#qr-resultado p.success {
+    color: green;
+}
+#qr-resultado p.info {
+    color: blue;
+}
+#qr-resultado p.warning {
+    color: orange;
+}
+#qr-resultado p.debug {
+    color: purple;
+}
+#qr-resultado p.critical {
+    color: darkred;
+}
+#qr-resultado p.alert {
+    color: darkorange;
+}
+#qr-resultado p.emergency {
+    color: black;
+}
+#qr-resultado p.notice {
+    color: teal;
+}
+#qr-resultado p.trace {
+    color: gray;
+}
+#qr-resultado p.fatal {
+    color: maroon;
+}
+#qr-resultado p.log {
+    color: navy;
+}
+#qr-resultado p.warn {
+    color: olive;
+}
+#qr-resultado p.info-debug {
+    color: lightblue;
+}
+#qr-resultado p.success-info {
+    color: lightgreen;
+}
+#qr-resultado p.error-critical {
+    color: darkred;
+}
+#qr-resultado p.warning-alert {
+    color: darkorange;
+}
+#qr-resultado p.debug-trace {
+    color: gray;
+}
+#qr-resultado p.fatal-log {
+    color: maroon;
+}
+#qr-resultado p.warn-info-debug {
+    color: lightblue;
+}
+#qr-resultado p.success-info-debug {
+    color: lightgreen;
+}
+#qr-resultado p.error-critical-alert {
+    color: darkred;
+}
+#qr-resultado p.warning-alert-trace {
+    color: gray;
+}
+#qr-resultado p.fatal-log-warn {
+    color: maroon;
+}
+#qr-resultado p.emergency-notice {
+    color: black;
+}
+#qr-resultado p.emergency-notice-debug {
+    color: black;
+}
+#qr-resultado p.emergency-notice-debug-fatal {
+    color: black;
+}
+#qr-resultado p.emergency-notice-debug-fatal-log {
+    color: black;
+}
+#qr-resultado p.emergency-notice-debug-fatal-log-warn {
+    color: black;
+}
+#qr-resultado p.emergency-notice-debug-fatal-log-warn-info {
+    color: black;
+}
+#qr-resultado p.emergency-notice-debug-fatal-log-warn-info-success {
+    color: black;
+}
+#qr-resultado p.emergency-notice-debug-fatal-log-warn-info-success-error {
+    color: black;
+}
