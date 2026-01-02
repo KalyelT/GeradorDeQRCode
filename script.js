@@ -1,51 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const textInput = document.getElementById('text-input');
-    const gerarButton = document.getElementById('gerar-qr');
-    const resultDiv = document.getElementById('qr-resultado');
+    const entradaTexto = document.getElementById('entrada-texto');
+    const botaoGerar = document.getElementById('gerar-qr');
+    const divisaoResultado = document.getElementById('qr-resultado');
 
-    gerarButton.addEventListener('click', function() {
-        const text = textInput.value.trim();
+    botaoGerar.addEventListener('click', gerarCodigoQR);
+    entradaTexto.addEventListener('keypress', function(evento) {
+        if (evento.key === 'Enter') {
+            gerarCodigoQR();
+        }
+    });
 
-        // Limpar resultado anterior
-        resultDiv.innerHTML = '';
+    function gerarCodigoQR() {
+        const texto = entradaTexto.value.trim();
+        divisaoResultado.innerHTML = '';
 
-        // Validar entrada
-        if (text === '') {
-            const errorMsg = document.createElement('p');
-            errorMsg.className = 'error';
-            errorMsg.textContent = 'Por favor, digite algum texto ou URL!';
-            resultDiv.appendChild(errorMsg);
+        if (texto === '') {
+            mostrarMensagem('Por favor, digite algum texto ou URL!', 'erro');
             return;
         }
 
-        // Gerar QR Code
         try {
-            const qrCode = new QRCode(resultDiv, {
-                text: text,
-                width: 200,
-                height: 200,
-                colorDark: '#000000',
+            new QRCode(divisaoResultado, {
+                text: texto,
+                width: 220,
+                height: 220,
+                colorDark: '#333333',
                 colorLight: '#ffffff',
                 correctLevel: QRCode.CorrectLevel.H
             });
 
-            // Adicionar mensagem de sucesso
-            const successMsg = document.createElement('p');
-            successMsg.className = 'success';
-            successMsg.textContent = 'QR Code gerado com sucesso!';
-            resultDiv.appendChild(successMsg);
-        } catch (error) {
-            const errorMsg = document.createElement('p');
-            errorMsg.className = 'error';
-            errorMsg.textContent = 'Erro ao gerar QR Code: ' + error.message;
-            resultDiv.appendChild(errorMsg);
+            mostrarMensagem('QR Code gerado com sucesso!', 'sucesso');
+        } catch (erro) {
+            mostrarMensagem('Erro ao gerar QR Code: ' + erro.message, 'erro');
         }
-    });
+    }
 
-    // Permitir gerar QR Code pressionando Enter
-    textInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            gerarButton.click();
-        }
-    });
+    function mostrarMensagem(texto, tipo) {
+        const mensagem = document.createElement('p');
+        mensagem.className = tipo;
+        mensagem.textContent = texto;
+        divisaoResultado.appendChild(mensagem);
+    }
 });
